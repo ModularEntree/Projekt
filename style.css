@@ -57,6 +57,7 @@ header h2 {
     margin-top: 0;
     position: relative;
     animation-name: header;
+    animation-fill-mode: both;
     animation-duration: 1s;
     animation-delay: 0.5s;
 }
@@ -67,14 +68,23 @@ header a {
     background: transparent;
     text-decoration: none;
 }
-
-
 footer {
     clear: left;
     font-size: 70%;
     text-align: center;
+    font-family: var(--typewriter-f);
+    animation-name: error;
+    animation-duration: 2s;
 }
-
+#yomum,
+#yomum:hover,
+#yomum:focus {
+    font-family: var(--body-f);
+    color: var(--text);
+    background-color: var(--bg);
+    text-decoration: none;
+    cursor: auto;
+}
 nav {
     position: sticky;
     width: 100%;
@@ -175,9 +185,20 @@ h2, h3 {
     animation-name: error;
     animation-duration: 2s;
 }
-table {
+/* I hate tables. Like, really. What the hell. */
+table, th, td {
     width: 80%;
+    table-layout: unset;
     margin:0 auto;
+    border: 1px var(--accent) solid;
+}
+td {
+    padding: 5px;
+}
+td:nth-child(1) {
+    text-align: center;
+    width: 5px;
+    overflow: hidden;
 }
 a {
     color:var(--accent);
@@ -188,7 +209,6 @@ a:hover + a:not(header h1 a){
     background-color: var(--accent);
     color:var(--text);
 }
-
 @keyframes header {
     0% {
         opacity: 0;
