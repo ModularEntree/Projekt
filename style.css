@@ -1,0 +1,153 @@
+/* 
+    Fonts
+Oswald - header
+Caveat - rukopis
+Press Start 2P - 80s písmo
+Special Elite - psací stroj
+Lato - základní písmo
+*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Lato&family=Oswald&family=Poiret+One&family=Poppins&family=Press+Start+2P&family=Special+Elite&display=swap');
+/* Roots */
+:root {
+    /* Paddings */
+    --padding-p: 10px;
+    /* Fonts */
+    --body-f: 'Lato';
+    --header-f: 'Oswald';
+    --handwriting-f: 'Caveat';
+    --typewriter-f: 'Special Elite';
+    --retro-f: 'Press Start P2';
+    /* Font properties */
+    --body-f-s: 100%;
+    --header-f-s: 2.0em;
+    --handwriting-f-s: 120%;
+    --typewriter-f-s: ;
+    --retro-f-s: ;
+    /* Colors */
+    --bg: #eee4d5;
+    --bg_paper: #f0c990;
+}
+
+body {
+    padding: var(--padding-p);
+    font-family: var(--body-f);
+    font-size: var(--body-f-s);
+    background-color: var(--bg);
+}
+
+header {
+    font-family: var(--header-f);
+    font-size: var(--header-f-s);
+
+}
+
+header h1 {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+header h2 {
+    font-family: var(--typewriter-f);
+    font-size: 1.0em;
+    margin-top: 0;
+}
+
+header a {
+    color: linear-gradient(bottom, grey, black);
+    text-shadow: white 2px 1px;
+    background: transparent;
+}
+
+footer {
+    clear: left;
+    font-family: var(--typewriter-f);
+    font-size: 70%;
+    text-align: center;
+}
+
+nav {
+    position: sticky;
+}
+
+nav ul {
+    background-color: #faefae;
+    list-style: none;
+    padding-left: 0;
+}
+nav li {
+    position: relative; 
+    display: inline-block;
+}
+nav ul ul li {
+    display: block
+} 
+nav ul ul {
+    background-color: #aaa;
+    display: none; 
+    width: 150px;      
+}
+nav li:hover ul {
+    display: block; 
+    position: absolute; 
+    z-index: 100; 
+}                 
+nav a {
+    text-decoration: none;
+    color: #282737;
+    display: block;
+    padding: 4px 8px;
+}
+nav a:hover {
+    background-color: #f87f2a;
+}
+nav a.aktivni { 
+    background-color: #000;
+    color: #fff;  
+}
+div.images {
+    float: right;
+    border: 1px black solid;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0;
+    display: block;
+    position: relative;
+}
+div.images p {
+    border-top: #000 1px solid;
+}
+div.pribeh {
+    font-family: var(--handwriting-f);
+    font-size: var(--handwriting-f-s);
+    border: #000 1px dashed;
+    padding: 10px;
+    background-color: var(--bg_paper);
+    width: 50%;
+    margin:0 auto;
+}
+.foto {
+    float: left;
+    border: 1px solid;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 320px;
+    height: 280px;
+    text-align: center;
+}
+.foto p {
+    font-size: 85%;
+    text-align: center;
+    border-top: #000 1px solid;
+}
+h2, h3 {
+    font-family: var(--header-f);
+}
+.typewriter {
+    font-family: var(--typewriter-f);
+}
+table {
+    width: 80%;
+    margin:0 auto;
+}
