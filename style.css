@@ -171,6 +171,9 @@ div.images {
 div.images p {
     border-top: var(--accent) 1px solid;
 }
+#special p {
+    max-width:fit-content;
+}
 div.pribeh {
     font-family: var(--handwriting-f);
     font-size: var(--handwriting-f-s);
