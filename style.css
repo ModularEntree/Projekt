@@ -75,7 +75,7 @@ footer {
     animation-duration: 2s;
     border-top: var(--accent) 1px solid;
 }
-/* Tajná myškavěc */
+/* Tajná myškavěc - prej musím dát Dluhošovi credit, takže dík za zdroj k myškavěci */
 #yomum,
 #yomum:visited,
 #yomum:hover,
@@ -319,7 +319,7 @@ a:not(header h1 a):hover {
     font-family: 'Lato';
     src: url("fonts/Lato.ttf") format("truetype");
 }
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     div.images {
         display: none;
     }
