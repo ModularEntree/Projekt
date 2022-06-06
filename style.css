@@ -2,12 +2,11 @@
     Fonts
 Oswald - header
 Caveat - rukopis
-Press Start 2P - 80s písmo
 Special Elite - psací stroj
 Lato - základní písmo
 */
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Oswald&display=swap');
-/* Roots */
+/* Root */
 :root {
     /* Paddings */
     --padding-p: 10px;
@@ -74,7 +73,9 @@ footer {
     font-family: var(--typewriter-f);
     animation-name: error;
     animation-duration: 2s;
+    border-top: var(--accent) 1px solid;
 }
+/* Tajná myškavěc */
 #yomum,
 #yomum:visited,
 #yomum:hover,
@@ -86,6 +87,7 @@ footer {
     cursor: auto;
     animation: none;
 }
+/* se slovy: „Amen, říkám vám, pokud se neobrátíte a nebudete jako děti, vůbec do nebeského království nepřijdete. Kdokoli se poníží a bude jako toto dítě, ten je v nebeském království největší. Kdokoli by takové dítě přijal v mém jménu, přijímá mě. - Matouš 18:3-5 */
 ::-moz-selection{ 
     background: var(--accent);
     color: var(--text);
@@ -117,6 +119,7 @@ nav ul {
     list-style: none;
     padding-left: 0;
 }
+/* To jsi nikdy neslyšel rčení "Čeho je moc, toho je příliš?" */
 nav ul li:nth-child(odd):not(nav ul li:hover *) {
     animation: navigation-odd 2s;
 }
@@ -239,6 +242,7 @@ col.col-three {
 col.col-four {
     width: 50%;
 }
+/* On jim setře každou slzu z očí a smrt už nebude, ani nářek ani křik ani bolest už nikdy nebude; neboť minulé věci pominuly.“ - Zjevení 21:4*/
 a {
     color:var(--accent);
 }
@@ -254,6 +258,7 @@ a:not(header h1 a):hover {
     background-color: var(--accent);
     color:var(--text);
 }
+/* Vrátil se zpět do paláce a ptal se Ježíše: „Odkud jsi?“ Ježíš neodpovídal. - Jan 19:9*/
 @keyframes header {
     0% {
         opacity: 0;
@@ -313,4 +318,12 @@ a:not(header h1 a):hover {
 @font-face {
     font-family: 'Lato';
     src: url("fonts/Lato.ttf") format("truetype");
+}
+@media only screen and (max-width: 600px) {
+    div.images {
+        display: none;
+    }
+    div.pribeh {
+        width: 90%;
+    }
 }
