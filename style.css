@@ -6,17 +6,16 @@ Press Start 2P - 80s písmo
 Special Elite - psací stroj
 Lato - základní písmo
 */
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Lato&family=Oswald&family=Poiret+One&family=Poppins&family=Press+Start+2P&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Oswald&display=swap');
 /* Roots */
 :root {
     /* Paddings */
     --padding-p: 10px;
     /* Fonts */
-    --body-f: 'Lato';
-    --header-f: 'Oswald';
-    --handwriting-f: 'Caveat';
-    --typewriter-f: 'Special Elite';
-    --retro-f: 'Press Start P2';
+    --body-f: 'Lato', sans-serif;
+    --header-f: 'Oswald', serif;
+    --handwriting-f: 'Caveat', sans-serif;
+    --typewriter-f: 'Special Elite', monospace;
     /* Font properties */
     --body-f-s: 100%;
     --header-f-s: 2.0em;
@@ -77,14 +76,38 @@ footer {
     animation-duration: 2s;
 }
 #yomum,
+#yomum:visited,
 #yomum:hover,
 #yomum:focus {
     font-family: var(--body-f);
     color: var(--text);
-    background-color: var(--bg);
+    background-color: transparent;
     text-decoration: none;
     cursor: auto;
+    animation: none;
 }
+::-moz-selection{ 
+    background: var(--accent);
+    color: var(--text);
+}
+::selection {
+    background: var(--accent);
+    color: var(--text);
+}
+::-webkit-scrollbar {
+    width: 9px;
+    background: transparent;
+}
+   
+::-webkit-scrollbar-track {
+    background: var(--bg_paper);
+}
+   
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border: none;
+}
+/* NAV */
 nav {
     position: sticky;
     width: 100%;
@@ -94,12 +117,18 @@ nav ul {
     list-style: none;
     padding-left: 0;
 }
+nav ul li:nth-child(odd):not(nav ul li:hover *) {
+    animation: navigation-odd 2s;
+}
+nav ul li:nth-child(even):not(nav ul li:hover *) {
+    animation: navigation-even 2s;
+}
 nav li {
     position: relative; 
     display: inline-block;
 }
 nav ul ul li {
-    display: block
+    display: block;
 } 
 nav ul ul {
     background-color: var(--bg_paper);
@@ -124,6 +153,7 @@ nav a.aktivni {
     background-color: var(--bg);
     color: var(--text);  
 }
+/*------*/
 div.images {
     float: right;
     border: 1px var(--accent) solid;
@@ -168,42 +198,57 @@ div.pribeh {
 }
 .foto img {
     transition: transform .2s;
+    cursor: zoom-in;
 }
 .foto img:hover {
     transform: scale(1.3);
+    cursor: zoom-in;
 } 
 h2, h3 {
     font-family: var(--header-f);
     color: var(--accent);
 }
+footer,
 .typewriter {
     font-family: var(--typewriter-f);
     animation-name: error;
     animation-duration: 2s;
 }
-.typewriter:hover {
-    animation-name: error;
-    animation-duration: 2s;
-}
 /* I hate tables. Like, really. What the hell. */
 table, th, td {
-    width: 80%;
-    table-layout: unset;
-    margin:0 auto;
+    margin: 0 auto;
     border: 1px var(--accent) solid;
+    background-color: var(--bg_paper);
+}
+table {
+    width: 80%;
 }
 td {
     padding: 5px;
 }
-td:nth-child(1) {
+td:not(:nth-child(4)) {
     text-align: center;
-    width: 5px;
-    overflow: hidden;
+}
+col.col-one {
+    width: 10%;
+}
+col.col-two,
+col.col-three {
+    width: 20%;
+}
+col.col-four {
+    width: 50%;
 }
 a {
     color:var(--accent);
 }
-a:hover + a:not(header h1 a){
+a::selection {
+    color: var(--bg);
+}
+a::-moz-selection {
+    color: var(--bg);    
+}
+a:not(header h1 a):hover {
     animation-name: hovering;
     animation-duration: 0.5s;
     background-color: var(--accent);
@@ -242,4 +287,30 @@ a:hover + a:not(header h1 a){
     100% {
         opacity: 1;
     }
+}
+@keyframes navigation-odd {
+    0% {
+        top: -1000px;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes navigation-even {
+    0% {
+        top: 1000px;
+    }
+    100% {
+        top: 0;
+    }
+}
+@font-face {
+    font-family: 'Special Elite';
+    src: url("fonts\SpecialElite.ttf") format("truetype");
+    src: url("fonts\SpecialElite.woff") format("woff");
+    src: url("fonts\SpecialElite.woff2") format("woff2");
+}
+@font-face {
+    font-family: 'Lato';
+    src: url("fonts/Lato.ttf") format("truetype");
 }
